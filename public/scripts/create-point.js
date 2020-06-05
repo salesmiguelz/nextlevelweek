@@ -26,8 +26,8 @@ function getCities(event) {
     citySelect.innerHTML = '<option value="">Selecione a cidade</option>'
     citySelect.disabled = true
     fetch(url).then(res => res.json()).then(cities => {
-        for (let city of cities) {
-            citySelect.innerHTML = citySelect.innerHTML + `<option value=${city.nome}>${city.nome}</option>`
+        for (const city of cities) {
+            citySelect.innerHTML = citySelect.innerHTML + `<option value="${city.nome}">${city.nome}</option>`
         }
 
         citySelect.disabled = false
@@ -64,7 +64,10 @@ function handleSelectedItem(event){
     
     itemLi.classList.toggle("selected")//Adiciona ou remove classe
 
+    
+
     const itemId = itemLi.dataset.id//Pega o id que eu setei no html para o card clickado 
+
 
 
     const alreadySelected = selectedItems.findIndex (item => {//Verifica se existem items selecionados
