@@ -67,19 +67,19 @@ db.serialize(() => {
 
 
     //Consultar dados da tabela
-    // db.all(`SELECT id FROM places`, function (err, rows) {//Função callback que ou dá erro, ou apresenta ou dados em coluna
-    //     if (err) {
-    //         return console.log(err)
-    //     }
+    db.all(`SELECT * FROM places`, function (err, rows) {//Função callback que ou dá erro, ou apresenta ou dados em coluna
+        if (err) {
+            return console.log(err)
+        }
 
-    //     console.log("Aqui estão seus registros: ")
-    //     console.log(rows)
-    // })
+        console.log("Aqui estão seus registros: ")
+        console.log(rows)
+    })
 
 
     //Deletar um dado da tabela
 
-    // db.run(`DELETE FROM places WHERE id = ?`, [12], function (err) {
+    // db.run(`DELETE FROM places WHERE id = ?`, [1], function (err) {
     //     if (err) {
     //         return console.log(err)
     //     }
